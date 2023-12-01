@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+}
+
+.chat_desc {
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.colored-toast.swal2-icon-success {
+    background-color: #a5dc86 !important;
+}
+  
+.colored-toast.swal2-icon-error {
+    background-color: #f27474 !important;
+}
+  
+.colored-toast.swal2-icon-warning {
+    background-color: #f8bb86 !important;
+}
+  
+.colored-toast.swal2-icon-info {
+    background-color: #3fc3ee !important;
+}
+  
+.colored-toast.swal2-icon-question {
+    background-color: #87adbd !important;
+}
+  
+.colored-toast .swal2-title {
+    color: white;
+}
+  
+.colored-toast .swal2-close {
+    color: white;
+}
+  
+.colored-toast .swal2-html-container {
+    color: white;
+}
+
+
+.preview_container {
+    display: flex;
+    gap: 50px;
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+#cropperjs {
+    display: block;
+    max-width: 100%;
+  }
+  
+#preview {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px;
+    border-radius: 100%;
+}
