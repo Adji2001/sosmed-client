@@ -11,7 +11,7 @@ const ChatMain = ({ messages, currentUser, currentChat }) => {
     const [newMessage, setNewMessage] = useState("")
     const [arrivalMessage, setArrivalMessage] = useState(null)
     const scrollRef = useRef()
-    const socket = io('http://localhost:5500')
+    const socket = io('https://sosmed-api-production.up.railway.app')
 
     const dispatch = useDispatch()
 
