@@ -9,7 +9,7 @@ const FeedTop = ({post, hideHandler, user}) => {
         <div className='flex items-center gap-2'>
             <Link to={`profile/${user.username}`}>
               {
-                user.profilePicture
+                user
                 ? <img src={import.meta.env.VITE_API_URI + (user.profilePicture || "users/default.jpeg")} alt={user.username} className='bg-slate-100 w-8 h-8 object-cover rounded-full' />
                 : <Skeleton className="w-8 h-8" baseColor='rgb(100 116 139)' highlightColor='rgb(148 163 184)' circle={true} />
               }

@@ -88,9 +88,9 @@ const Profile = () => {
             confirmButtonText: "save profile",
             html: `
             <div class="preview_container">
-              <img id="preview" src="${import.meta.env.VITE_API_URI + user.profilePicture}">
+              <img id="preview" src="${import.meta.env.VITE_API_URI + (user.profilePicture || 'users/default.jpeg')}">
               <div>
-                <img id="cropperjs" src="${import.meta.env.VITE_API_URI + user.profilePicture}">
+                <img id="cropperjs" src="${import.meta.env.VITE_API_URI + (user.profilePicture || 'users/default.jpeg')}">
               </div>
             </div>
             <input type="text" value="${userName}" class="swal2-input" placeholder="Username">

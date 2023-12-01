@@ -1,6 +1,19 @@
 import axios from "axios"
 import { useRef } from "react"
 import { Link, useNavigate } from "react-router-dom"
+import Swal from 'sweetalert2'
+
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top',
+  iconColor: 'white',
+  customClass: {
+    popup: 'colored-toast',
+  },
+  showConfirmButton: false,
+  timer: 2000,
+  timerProgressBar: true,
+})
 
 const Register = () => {
   const username = useRef()
@@ -17,7 +30,10 @@ const Register = () => {
     })
 
     if (confirmPassword.current.value !== password.current.value) {
-      confirmPassword.current.setCustomValidity("Password don't match!")
+      await Toast.fire({
+        icon: 'error',
+        title: "Password don't match!",
+      })
     } else {
       const user = {
         username: username.current.value,
@@ -26,7 +42,11 @@ const Register = () => {
       }
 
       try {
-        await axios.post('http://localhost:5000/api/auth/register', user)
+        await axios.post(`${import.meta.env.VITE_API_URI}api/auth/register`, user)
+        await Toast.fire({
+          icon: 'success',
+          title: "Register successfully!",
+        })
         navigate('/login')
       } catch (error) {
         console.log(error)
